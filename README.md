@@ -58,6 +58,9 @@ To access pages presented by your job, you can use chrome/firefox on x2go, and s
 
 ## Citations and other reading material
 [Singularity 3.7 user guid](https://docs.sylabs.io/guides/3.7/user-guide/)
+
 [Parallel GAMIT](https://github.com/demiangomez/Parallel.GAMIT)
+
 [ubuntu 20.04 docker image](https://hub.docker.com/_/ubuntu?tab=description&page=1&name=20.04)
+
 [SLURM quickstart](https://slurm.schedmd.com/quickstart.html)
