@@ -1,0 +1,23 @@
+Bootstrap: docker
+From: ubuntu:20.04
+
+%post
+    apt autoremove
+    apt clean
+    apt-get -y update
+    DEBIAN_FRONTEND=noninteractive apt install -y build-essential ca-certificates curl postgresql git python3.8-venv python3-pip
+    curl https://www.pgadmin.org/static/packages_pgadmin_org.pub | apt-key add
+    sh -c 'echo "deb https://ftp.postgresql.org/pub/pgadmin/pgadmin4/apt/focal/ pgadmin4 main" > /etc/apt/sources.list.d/pgadmin4.list && apt update -y'
+    apt-get -y install pgadmin4-desktop
+    git clone https://github.com/demiangomez/Parallel.GAMIT.git /opt/gamit/
+    cd /opt/gamit/pgamit
+    python3.8 -m venv "pgamit"
+    cd ..
+    python3.8 -m pip install .
+
+%environment
+    export LC_ALL=C
+    export PATH=/usr/games:$PATH
+
+%runscript
+    date
