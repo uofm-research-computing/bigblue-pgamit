@@ -51,5 +51,13 @@ singularity build --fakeroot pgamit.sif ../pgamit.def
 ```
 which will create the sif container file for singularity/apptainer. The `--fakeroot` command is required here to build the container on bigblue. If you modify the pgamit.def definition file, you will need to rebuild the sif image file.
 
-## Citations and other reading material
+## Networking
+While singularity/apptainer has some built in networking support, on bigblue, this isn't necessary. Your job can talk to other daemons started on other nodes assuming it doesn't try to use certain "restricted" ports. 
 
+To access pages presented by your job, you can use chrome/firefox on x2go, and simply use the node's url and port (like `http://ac01:8888`) to pull up any page your container exposes. Keep in mind that anyone on the cluster could be using the same ports (usually your job will exit with something like "cannot listen on port") or might interact with your job through that interface. If you need security, you will want to use a token (like jupyter notebook) or simply make sure the page cannot modify your job. Unfortunately, we cannot give anymore guidance on this part because many projects have different methods of securing their respective pages, if at all.
+
+## Citations and other reading material
+[Singularity 3.7 user guid](https://docs.sylabs.io/guides/3.7/user-guide/)
+[Parallel GAMIT](https://github.com/demiangomez/Parallel.GAMIT)
+[ubuntu 20.04 docker image](https://hub.docker.com/_/ubuntu?tab=description&page=1&name=20.04)
+[SLURM quickstart](https://slurm.schedmd.com/quickstart.html)
