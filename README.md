@@ -13,7 +13,7 @@ module load singularity
 This will create a bin directory with pgamit.sif container image and a perl script. 
 
 ## Setup
-Copy the pgamit.sh script to your work directory, preferably in a /project/$USER directory. For now, lets refer to it as /project/$USER/test. Modify the script in your work directory for resources like CPUs and nodes and memory (the #SBATCH lines), your configuration and datafiles, and the actual pgamit scripts (PPP_NRCAN?).
+Copy the pgamit.sh script to your work directory, preferably in a `/project/$USER` directory. Modify the script in your work directory for resources like CPUs and nodes and memory (the #SBATCH lines), your configuration and datafiles, and the actual pgamit scripts (PPP_NRCAN?).
 
 ## Submission
 Once you have built the container and setup the submission script in your working directory, simply run:
